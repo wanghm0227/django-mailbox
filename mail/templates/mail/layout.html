@@ -2,17 +2,29 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>{% block title %}Mail{% endblock %}</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="{% static 'mail/styles.css' %}">
-        {% block script %}
+
+<head>
+    <title>{% block title %}Mail{% endblock %}</title>
+    {% comment %} CSS Style Link {% endcomment %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'mail/styles.css' %}">
+    
+    {% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
+    </script>
+    {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        {% block body %}
         {% endblock %}
-    </head>
-    <body>
-        <div class="container">
-            {% block body %}
-            {% endblock %}
-        </div>
-    </body>
+    </div>
+
+</body>
+
 </html>
